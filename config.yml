@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: TON_COMPTE_GITHUB/LEONCE_SITE
+  branch: main
+  auth_scope: repo
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+site_url: https://votre-site.netlify.app
+collections:
+  - name: "pages"
+    label: "Pages du site"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Niveau", name: "level", widget: "select", options: ["6e", "5e", "4e", "3e", "accueil"]}
+      - {label: "Résumé", name: "summary", widget: "text"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+  - name: "resources"
+    label: "Ressources"
+    folder: "content/resources"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Type", name: "type", widget: "select", options: ["Vidéo", "Exercice", "Lien externe"]}
+      - {label: "Niveau", name: "level", widget: "select", options: ["6e", "5e", "4e", "3e"]}
+      - {label: "Lien", name: "link", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "text"}
