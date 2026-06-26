@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEONCE | Maths collège</title>
+<style>
+:root{--bg:#f4f1ea;--card:rgba(255,255,255,.72);--ink:#1f1d18;--muted:#675f54;--line:rgba(31,29,24,.10);--primary:#01696f;--primary2:#7a39bb;--accent:#f59e0b;--shadow:0 20px 60px rgba(31,29,24,.10)}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:
+radial-gradient(circle at top left, rgba(1,105,111,.18), transparent 30%),
+radial-gradient(circle at top right, rgba(122,57,187,.16), transparent 28%),
+linear-gradient(180deg,#f8f6f1 0%,#f2eee6 100%)}
+a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:16px;background:#fff;padding:12px 16px;border-radius:999px;z-index:20}.skip:focus{left:16px}
+.top{position:sticky;top:0;z-index:15;backdrop-filter:blur(16px);background:rgba(244,241,234,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--primary2));display:grid;place-items:center;color:#fff;box-shadow:var(--shadow)}.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.55);font-size:.85rem;font-weight:700}.menu{display:flex;gap:10px;flex-wrap:wrap}
+.hero{padding:42px 0 30px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:stretch}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
+.hero-main{padding:34px;position:relative;overflow:hidden}.hero-main:before{content:"";position:absolute;inset:auto -120px -120px auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle, rgba(245,158,11,.20), transparent 65%)}
+.kicker{color:var(--primary);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}.hero h1{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.02;margin:10px 0 14px;max-width:11ch}.hero p{font-size:1.06rem;color:var(--muted);max-width:62ch}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-weight:700}.btn.primary{background:linear-gradient(135deg,var(--primary),#0f8790);color:#fff;border:none}.btn.secondary{background:rgba(255,255,255,.55)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{padding:16px;border-radius:20px;background:rgba(255,255,255,.65);border:1px solid var(--line)}.stat strong{display:block;font-size:1.35rem}.stat span{color:var(--muted);font-size:.9rem}
+.hero-side{padding:18px;display:grid;gap:14px}.glass{padding:18px;border-radius:22px;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(10px)}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:18px}.strip img{height:122px;object-fit:cover;border-radius:18px;border:1px solid var(--line)}
+.section{padding:8px 0 30px}.section h2{font-size:clamp(1.4rem,2vw,2rem);margin:0 0 8px}.section p.sub{margin:0 0 18px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.card .body{padding:20px}.card h3{margin:10px 0 8px;font-size:1.1rem}.card p{margin:0;color:var(--muted)}
+.miniimg{aspect-ratio:16/9;object-fit:cover;width:100%}.soft{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(1,105,111,.10);color:var(--primary);font-weight:700;font-size:.82rem}.soft.alt{background:rgba(122,57,187,.10);color:var(--primary2)}
+.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px 14px;border-bottom:1px solid rgba(31,29,24,.08);text-align:left;font-size:.96rem}.table th{font-size:.8rem;color:#7a7367;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,255,255,.35)}
+.footer{padding:20px 0 36px;color:var(--muted);font-size:.95rem;text-align:center}
+.hidden{display:none}
+@media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.nav{flex-direction:column;align-items:flex-start}.strip{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+<div class="top"><div class="wrap"><div class="nav"><div class="brand"><div class="logo" aria-hidden="true">L</div><div><div style="font-weight:800">LEONCE</div><div style="font-size:.9rem;color:var(--muted)">Plateforme maths collège</div></div></div><div class="menu"><span class="badge">Vidéos</span><span class="badge">Exercices</span><span class="badge">Codes par niveau</span></div></div></div></div>
+<main id="main" class="wrap">
+<section class="hero">
+  <div class="hero-grid">
+    <div class="panel hero-main">
+      <div class="kicker">Site officiel de LEONCE</div>
+      <h1>Un espace premium pour les ressources de mathématiques</h1>
+      <p>Vidéos, exercices, liens en ligne et suivi des élèves, le tout organisé par niveau. Tes élèves saisissent leur code et accèdent directement à leur page dédiée.</p>
+      <div class="actions"><a class="btn primary" href="#acces">Accéder aux niveaux</a><a class="btn secondary" href="#suivi">Voir le suivi</a></div>
+      <div class="stats"><div class="stat"><strong>4</strong><span>Niveaux</span></div><div class="stat"><strong>1</strong><span>Portail central</span></div><div class="stat"><strong>100%</strong><span>Personnalisable</span></div></div>
+    </div>
+    <aside class="panel hero-side">
+      <div class="glass"><span class="soft">Élèves</span><p style="margin:10px 0 0;color:var(--muted)">Un accès clair par code pour la 6e, 5e, 4e et 3e.</p></div>
+      <div class="glass"><span class="soft alt">Professeur</span><p style="margin:10px 0 0;color:var(--muted)">Gestion des inscriptions, export CSV, suppression, déconnexion.</p></div>
+      <div class="glass"><span class="soft">Ludique</span><p style="margin:10px 0 0;color:var(--muted)">Illustrations amusantes pour rendre le site plus accueillant.</p></div>
+    </aside>
+  </div>
+</section>
+
+<div class="panel strip">
+  <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/3aae3076f10e6049163d4615f75f86b570399505.jpg" alt="Symbole plus amusant">
+  <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e3fe85b1799ca1ef2581072914acbe7104313573.jpg" alt="Symbole égal amusant">
+  <img src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/6519c9160baac0e59c80017679f5eedba4db5e52.jpg" alt="Doodles de maths">
+</div>
+
+<section class="section" id="acces">
+  <h2>Accès par code</h2>
+  <p class="sub">Saisis le code du niveau pour être redirigé automatiquement.</p>
+  <div class="grid">
+    <article class="card"><img class="miniimg" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/41fd156ac66d0987f52c73cf0e741f23f9b9e05d.jpg" alt="Icône amusante math 6e"><div class="body"><span class="soft">6e</span><h3>Entrée 6e</h3><p>Code : 6MATHS26</p><div class="actions"><a class="btn primary" href="6e.html">Ouvrir</a></div></div></article>
+    <article class="card"><img class="miniimg" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/3aae3076f10e6049163d4615f75f86b570399505.jpg" alt="Icône amusante math 5e"><div class="body"><span class="soft">5e</span><h3>Entrée 5e</h3><p>Code : 5MATHS26</p><div class="actions"><a class="btn primary" href="5e.html">Ouvrir</a></div></div></article>
+    <article class="card"><img class="miniimg" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e3fe85b1799ca1ef2581072914acbe7104313573.jpg" alt="Icône amusante math 4e"><div class="body"><span class="soft">4e</span><h3>Entrée 4e</h3><p>Code : 4MATHS26</p><div class="actions"><a class="btn primary" href="4e.html">Ouvrir</a></div></div></article>
+    <article class="card"><img class="miniimg" src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/6519c9160baac0e59c80017679f5eedba4db5e52.jpg" alt="Icône amusante math 3e"><div class="body"><span class="soft">3e</span><h3>Entrée 3e</h3><p>Code : 3MATHS26</p><div class="actions"><a class="btn primary" href="3e.html">Ouvrir</a></div></div></article>
+  </div>
+</section>
+
+<section class="section" id="suivi">
+  <h2>Élèves inscrits</h2>
+  <p class="sub">L'accès professeur permet de gérer la liste des élèves.</p>
+  <div class="panel" style="padding:20px">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:end">
+      <div><label>Mot de passe professeur</label><input id="teacherPass" type="password" placeholder="PROF-2026"></div>
+      <button class="btn primary" id="unlockTeacher">Déverrouiller</button>
+      <button class="btn" id="lockTeacher" type="button">Déconnexion</button>
+    </div>
+    <p id="teacherMsg" class="sub" style="margin-top:12px"></p>
+    <div id="teacherArea" class="hidden">
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:end">
+        <div><label>Prénom</label><input id="firstName" placeholder="Prénom"></div>
+        <div><label>Nom</label><input id="lastName" placeholder="Nom"></div>
+        <div><label>Niveau</label><select id="studentLevel"><option>6e</option><option>5e</option><option>4e</option><option>3e</option></select></div>
+        <button class="btn primary" id="addStudent">Ajouter</button>
+        <button class="btn" id="exportStudents">Exporter CSV</button>
+        <button class="btn" id="clearStudents">Tout effacer</button>
+      </div>
+      <div id="studentsList" style="margin-top:16px"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="panel" style="padding:20px">
+    <h2 style="margin-top:0">Site de LEONCE</h2>
+    <p class="sub" style="margin-bottom:0">Tu peux remplacer les contenus d'exemple par tes vraies vidéos, fiches et liens au fil de l'année.</p>
+  </div>
+</section>
+</main>
+<div class="footer">LEONCE · Ressources maths collège</div>
+<script>
+const codes = { '6MATHS26':'6e.html', '5MATHS26':'5e.html', '4MATHS26':'4e.html', '3MATHS26':'3e.html' };
+const studentsKey = 'platformStudents';
+const teacherKey = 'teacherUnlocked';
+const correctTeacherPass = 'PROF-2026';
+const teacherArea = document.getElementById('teacherArea');
+const teacherMsg = document.getElementById('teacherMsg');
+const teacherPass = document.getElementById('teacherPass');
+const studentsList = document.getElementById('studentsList');
+function getStudents(){ return JSON.parse(localStorage.getItem(studentsKey) || '[]'); }
+function saveStudents(students){ localStorage.setItem(studentsKey, JSON.stringify(students)); }
+function syncTeacherState(){ const ok = localStorage.getItem(teacherKey) === '1'; teacherArea.classList.toggle('hidden', !ok); teacherMsg.textContent = ok ? 'Accès professeur activé.' : 'Accès réservé au professeur.'; document.getElementById('lockTeacher').style.display = ok ? 'inline-flex' : 'none'; renderStudents(); }
+function renderStudents(){ if(localStorage.getItem(teacherKey) !== '1'){ studentsList.innerHTML = '<p class="sub">Connecte-toi en tant que professeur pour voir la liste.</p>'; return; } const students = getStudents(); if(!students.length){ studentsList.innerHTML = '<p class="sub">Aucun élève inscrit pour le moment.</p>'; return; } studentsList.innerHTML = '<div class="tablewrap"><table class="table"><thead><tr><th>Prénom</th><th>Nom</th><th>Niveau</th><th>Action</th></tr></thead><tbody>' + students.map((s,i)=>`<tr><td>${s.first}</td><td>${s.last}</td><td>${s.level}</td><td><button class="btn" data-del="${i}">Supprimer</button></td></tr>`).join('') + '</tbody></table></div>'; studentsList.querySelectorAll('[data-del]').forEach(btn=>btn.addEventListener('click', ()=>{ const students = getStudents(); students.splice(Number(btn.dataset.del),1); saveStudents(students); renderStudents(); })); }
+document.getElementById('unlockTeacher').addEventListener('click', ()=>{ if(teacherPass.value === correctTeacherPass){ localStorage.setItem(teacherKey,'1'); syncTeacherState(); } else { teacherMsg.textContent = 'Mot de passe incorrect.'; teacherMsg.style.color = '#b45309'; } });
+document.getElementById('lockTeacher').addEventListener('click', ()=>{ localStorage.removeItem(teacherKey); syncTeacherState(); });
+document.getElementById('addStudent').addEventListener('click', ()=>{ const first = document.getElementById('firstName').value.trim(); const last = document.getElementById('lastName').value.trim(); const level = document.getElementById('studentLevel').value; if(!first || !last) return; const students = getStudents(); students.push({ first, last, level }); saveStudents(students); renderStudents(); });
+document.getElementById('exportStudents').addEventListener('click', ()=>{ const students = getStudents(); const csv = ['Prenom,Nom,Niveau', ...students.map(s=>`${s.first},${s.last},${s.level}`)].join('
+'); const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'eleves-inscrits.csv'; a.click(); URL.revokeObjectURL(a.href); });
+document.getElementById('clearStudents').addEventListener('click', ()=>{ if(confirm('Effacer toute la liste ?')){ saveStudents([]); renderStudents(); } });
+window.addEventListener('DOMContentLoaded', syncTeacherState);
+</script>
+</body>
+</html>
